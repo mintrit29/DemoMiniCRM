@@ -4,6 +4,8 @@ WORKDIR /app
 
 RUN apk add --no-cache openssl
 
+ENV DATABASE_URL="file:/app/data/pos.db"
+
 COPY package*.json ./
 COPY prisma ./prisma
 RUN npm install
@@ -14,4 +16,4 @@ RUN npm run build
 
 EXPOSE 3000
 
-CMD ["sh", "-c", "npx prisma migrate deploy && npm run start"]
+CMD ["sh", "-c", "mkdir -p /app/data && npx prisma migrate deploy && npm run start"]
