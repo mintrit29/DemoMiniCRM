@@ -49,3 +49,7 @@ npx prisma migrate reset
 - Lịch sử đơn hàng và chi tiết dòng hàng.
 - Báo cáo doanh thu hôm nay.
 - Dockerfile và docker-compose.yml với SQLite persistent storage.
+
+## Token đã dùng
+
+Ước tính đã dùng khoảng 1,000,000 tokens cho toàn bộ quá trình phát triển, sửa lỗi, tích hợp UI và kiểm thử.
