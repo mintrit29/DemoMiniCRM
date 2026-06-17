@@ -1,0 +1,14 @@
+services:
+  mini-pos:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mini-pos
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "file:/app/data/pos.db"
+      NODE_ENV: "production"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
