@@ -8,15 +8,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        pastel: {
-          blue: "#E0F2FE",
-          pink: "#FCE7F3",
-          green: "#DCFCE7",
-          yellow: "#FEF9C3",
-          purple: "#F3E8FF",
-          slate: "#F8FAFC",
-        },
+        thermal: "#F7F7F5",
+        ink: "#111110",
+        highlighter: "#E8FF00",
+        laser: "#FF331F",
+        perforation: "#E5E5E0",
       },
+      fontFamily: {
+        mono: ['var(--font-geist-mono)', 'monospace'],
+        sans: ['var(--font-inter)', 'sans-serif'],
+      },
+      boxShadow: {
+        'brutal': '4px 4px 0px 0px rgba(17,17,16,1)',
+        'brutal-sm': '2px 2px 0px 0px rgba(17,17,16,1)',
+      }
     },
   },
   plugins: [],

@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 };
 
 const navItems = [
-  { name: "Dashboard", href: "/", icon: <LayoutDashboard size={20} /> },
-  { name: "POS", href: "/pos", icon: <ShoppingCart size={20} /> },
+  { name: "Tổng quan", href: "/", icon: <LayoutDashboard size={20} /> },
+  { name: "Bán hàng", href: "/pos", icon: <ShoppingCart size={20} /> },
   { name: "Sản phẩm", href: "/products", icon: <Package size={20} /> },
   { name: "Đơn hàng", href: "/orders", icon: <ClipboardList size={20} /> },
   { name: "Báo cáo", href: "/reports", icon: <BarChart3 size={20} /> },
@@ -19,19 +19,19 @@ const navItems = [
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="vi" suppressHydrationWarning>
-      <body className="bg-slate-50 text-slate-800" suppressHydrationWarning>
+      <body className="min-h-screen bg-thermal text-ink" suppressHydrationWarning>
         <div className="flex min-h-screen">
-          <aside className="fixed hidden h-full w-64 border-r border-slate-200 bg-white md:block">
-            <div className="p-6">
-              <h1 className="text-2xl font-bold text-blue-700">Mini POS</h1>
-              <p className="mt-1 text-xs text-slate-500">Quản lý cửa hàng tiện lợi</p>
+          <aside className="fixed z-10 hidden h-full w-64 border-r-2 border-ink bg-white shadow-[4px_0_0_0_rgba(17,17,16,1)] md:block">
+            <div className="border-b-2 border-ink p-6">
+              <h1 className="text-3xl font-black uppercase tracking-tighter">Mini POS</h1>
+              <p className="mt-1 font-mono text-xs opacity-60">HỆ THỐNG BÁN HÀNG</p>
             </div>
-            <nav className="mt-4 space-y-1 px-4">
+            <nav className="mt-6 space-y-2 px-4">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="flex items-center gap-3 rounded-lg p-3 font-medium text-slate-600 transition hover:bg-slate-100 hover:text-blue-700"
+                  className="brutal-border flex items-center gap-3 p-3 font-bold uppercase tracking-wider text-ink transition-all hover:translate-x-1 hover:bg-highlighter"
                 >
                   {item.icon}
                   <span>{item.name}</span>
@@ -40,11 +40,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </nav>
           </aside>
 
-          <nav className="fixed bottom-0 left-0 right-0 z-50 flex justify-around border-t border-slate-200 bg-white p-2 md:hidden">
+          <nav className="fixed bottom-0 left-0 right-0 z-50 flex justify-around border-t-2 border-ink bg-white p-2 md:hidden">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="flex flex-col items-center p-2 text-slate-500">
+              <Link key={item.href} href={item.href} className="flex flex-col items-center p-2 text-ink hover:text-laser">
                 {item.icon}
-                <span className="mt-1 text-[10px]">{item.name}</span>
+                <span className="mt-1 text-[10px] font-bold uppercase">{item.name}</span>
               </Link>
             ))}
           </nav>
